@@ -80,22 +80,6 @@
   }
 }
 
-/* Scanline overlay for DayZ grunge feel */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.04) 2px,
-    rgba(0, 0, 0, 0.04) 4px
-  );
-  pointer-events: none;
-  z-index: 9999;
-}
-
 /* Green glow for primary buttons */
 .btn-primary-glow {
   box-shadow: 0 0 12px rgba(60, 130, 60, 0.4), 0 2px 8px rgba(0,0,0,0.5);
