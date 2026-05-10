@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "The Ghost Scrubber"
+version = "1.0.0"
+id = "artifacts/ghost-scrubber"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24102
+
+[services.development]
+run = "pnpm --filter @workspace/ghost-scrubber run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ghost-scrubber", "run", "build" ]
+publicDir = "artifacts/ghost-scrubber/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24102"
+BASE_PATH = "/"
